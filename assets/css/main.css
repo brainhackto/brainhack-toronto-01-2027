@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+:root {
+	color-scheme: dark;
+	font-family: "DM Sans", sans-serif;
+	color: #f4f4f8;
+	background: #10111d;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	scroll-behavior: smooth;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	background: #10111d;
+	line-height: 1.6;
+}
+
+a {
+	color: inherit;
+}
+
+.topnav {
+	position: absolute;
+	z-index: 1;
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1.25rem clamp(1.25rem, 6vw, 5rem);
+}
+
+.brand {
+	font-family: "Space Grotesk", sans-serif;
+	font-size: 1.05rem;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.nav-links {
+	display: flex;
+	gap: clamp(1rem, 3vw, 2.5rem);
+}
+
+.nav-links a,
+.text-link {
+	text-decoration: none;
+}
+
+.nav-links a {
+	color: #d1d1dc;
+	font-size: 0.9rem;
+}
+
+.nav-links a:hover,
+.text-link:hover {
+	color: #a99bff;
+}
+
+.hero {
+	display: grid;
+	min-height: 85vh;
+	align-items: center;
+	padding: 8rem clamp(1.5rem, 12vw, 10rem);
+	background:
+		radial-gradient(ellipse at 78% 48%, rgb(96 72 190 / 48%), transparent 34%),
+		radial-gradient(ellipse at 22% 96%, rgb(31 112 160 / 28%), transparent 42%),
+		linear-gradient(125deg, #141522 10%, #19182d 58%, #252043);
+}
+
+.hero-content {
+	max-width: 880px;
+}
+
+.eyebrow {
+	margin: 0 0 1rem;
+	color: #a99bff;
+	font-size: 0.78rem;
+	font-weight: 700;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+	font-family: "Space Grotesk", sans-serif;
+	line-height: 1.15;
+}
+
+h1 {
+	max-width: 850px;
+	margin: 0;
+	font-size: clamp(2.7rem, 6vw, 5.5rem);
+	letter-spacing: -0.045em;
+}
+
+.hero-date {
+	margin: 1.5rem 0 2rem;
+	color: #d1d1dc;
+	font-size: clamp(1.15rem, 2vw, 1.5rem);
+}
+
+.button {
+	display: inline-block;
+	padding: 0.85rem 1.25rem;
+	border: 1px solid #a99bff;
+	border-radius: 3px;
+	background: #8875ef;
+	color: #fff;
+	font-weight: 700;
+	text-decoration: none;
+	transition: background 160ms ease;
+}
+
+.button:hover {
+	background: #705add;
+}
+
+.section {
+	padding: clamp(4rem, 9vw, 7rem) 1.5rem;
+}
+
+.section-inner {
+	width: min(100%, 1050px);
+	margin: 0 auto;
+}
+
+.section h2,
+footer h2 {
+	margin: 0 0 1.25rem;
+	font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.section p:not(.eyebrow):not(.note) {
+	max-width: 760px;
+	color: #c7c7d1;
+	font-size: 1.1rem;
+}
+
+.about {
+	background: #f4f3f9;
+	color: #171725;
+}
+
+.about .eyebrow {
+	color: #6551c9;
+}
+
+.about p:not(.eyebrow) {
+	color: #4c4b5a;
+}
+
+.details {
+	background: #171825;
+}
+
+.detail-card {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1.5rem;
+	margin-top: 2rem;
+}
+
+.detail-card > div {
+	padding: 1.5rem;
+	border: 1px solid #393849;
+	border-radius: 4px;
+	background: #1d1e2d;
+}
+
+.detail-card h3 {
+	margin: 0;
+	color: #a99bff;
+	font-size: 1rem;
+}
+
+.detail-card p {
+	margin-bottom: 0;
+}
+
+.note {
+	margin-top: 1.5rem;
+	color: #aaa9b7;
+	font-size: 0.95rem;
+}
+
+.venue {
+	background: #222039;
+}
+
+.text-link {
+	display: inline-block;
+	margin-top: 0.5rem;
+	color: #c3baff;
+	font-weight: 700;
+}
+
+footer {
+	padding: 3.5rem 1.5rem 1.25rem;
+	background: #10111d;
+}
+
+.footer-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2rem;
+	padding-bottom: 2.5rem;
+}
+
+.footer-content h2 {
+	margin-bottom: 0;
+}
+
+.footer-content .text-link {
+	margin: 0;
+}
+
+.copyright {
+	margin: 0;
+	color: #888795;
+	font-size: 0.8rem;
+	text-align: center;
+}
+
+@media (max-width: 680px) {
+	.topnav {
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+
+	.nav-links {
+		flex-wrap: wrap;
+		gap: 0.5rem 1rem;
+	}
+
+	.hero {
+		min-height: 78vh;
+		padding-top: 10rem;
+	}
+
+	.detail-card {
+		grid-template-columns: 1fr;
+	}
+
+	.footer-content {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:root {
+		scroll-behavior: auto;
+	}
+
+	.button {
+		transition: none;
+	}
+}
