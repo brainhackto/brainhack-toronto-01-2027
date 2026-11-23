@@ -1,78 +1,920 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<!--
+	Tessellate by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Brainhack Toronto 2027: Responsible, transparent, and reproducible AI for brain hacking.">
-	<title>Brainhack Toronto 2027 | Responsible, transparent, and reproducible AI for brain hacking</title>
-	<link rel="stylesheet" href="assets/css/main.css">
+	<title>Global Toronto 01-2027</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/index.css" />
+
+
+	<!-- Schedule component (data: assets/data/schedule.json) -->
+	<link rel="stylesheet" href="assets/css/agenda.css" />
+	<link rel="stylesheet" href="assets/css/venn.css" />
+	<link rel="stylesheet" href="assets/css/hero.css" />
+	<link rel="stylesheet" href="assets/css/nav.css" />
+	<link rel="stylesheet" href="assets/css/footer.css" />
+	<script src="assets/js/agenda.js"></script>
+	<script src="assets/js/jquery.min.js"></script>
+
+	<!-- Script for responsive banner -->
+	<script>
+		// Open/close the header menu on narrow screens; close it after a link is picked.
+		function myFunction() {
+			var nav = document.getElementById("myTopnav");
+			var open = nav.classList.toggle("open");
+			nav.querySelector(".nav-toggle").setAttribute("aria-expanded", open ? "true" : "false");
+		}
+		document.addEventListener("DOMContentLoaded", function () {
+			document.querySelectorAll("#nav-links a").forEach(function (a) {
+				a.addEventListener("click", function () {
+					var nav = document.getElementById("myTopnav");
+					nav.classList.remove("open");
+					nav.querySelector(".nav-toggle").setAttribute("aria-expanded", "false");
+				});
+			});
+		});
+	</script>
+
+
 </head>
+
 <body>
-	<nav class="topnav" aria-label="Main navigation">
-		<a class="brand" href="#home">Brainhack Toronto 2027</a>
-		<div class="nav-links">
-			<a href="#about">About</a>
-			<a href="#details">Event details</a>
-			<a href="#venue">Venue</a>
-			<a href="#register">Register</a>
+
+	<nav class="site-nav" id="myTopnav" aria-label="Main">
+		<div class="nav-inner">
+			<a class="brand" href="#info">BrainHack Toronto <span>2027</span></a>
+			<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu" onclick="myFunction()">&#9776;</button>
+			<div class="nav-links" id="nav-links">
+				<a href="#schedule">Program</a>
+				<a href="#agenda-section">Schedule</a>
+				<!-- <a href="#workshop">TrainTrack</a>
+				<a href="#panel">Featured Panels</a> -->
+				<a href="#projects">Projects</a>
+				<a href="#team">Our team</a>
+				<a href="#sponsors">Sponsors</a>
+				<a href="#contact">Contact</a>
+				<span class="nav-icons">
+					<a class="nav-icon" href="https://github.com/brainhackto/brainhack-toronto-01-2027" aria-label="GitHub"><i class="icon fa-github"></i></a>
+					<a class="nav-icon" href="https://x.com/brainhackto" aria-label="X"><svg class="x-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+				</span>
+				<a class="nav-cta" href="#register-section">Register</a>
+			</div>
 		</div>
 	</nav>
 
-	<main>
-		<header class="hero" id="home">
-			<div class="hero-content">
-				<p class="eyebrow">Brainhack Global · Toronto</p>
-				<h1>Responsible, transparent, and reproducible AI for brain hacking</h1>
-				<p class="hero-date">January 20–22, 2027</p>
-				<a class="button" href="#details">Explore the event</a>
+	<!-- Header -->
+
+	<span class="header-logo">
+
+		<!-- Banner: Toronto skyline (left) fading into BrainHack blue, illustration + details (right).
+		     Update the text here each year. -->
+		<header class="banner">
+			<div class="banner-photo" role="img" aria-label="Toronto skyline with the CN Tower at sunset"></div>
+			<div class="banner-fade" aria-hidden="true"></div>
+						<details class="banner-credit"><summary aria-label="Photo credit"><i class="fas fa-camera" aria-hidden="true"></i></summary><span>Photo: <a href="https://commons.wikimedia.org/wiki/File:Toronto_Ontario.jpg" target="_blank" rel="noopener">&ldquo;Toronto&rdquo;</a> by Christian Raul Hernandez, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener license">CC BY-SA 4.0</a>, cropped and edited</span></details>
+			<div class="banner-content">
+				<img class="banner-art" src="./images/BrainHack/1x/Redesign.png"
+					alt="BrainHack Toronto illustration: the CN Tower, a raccoon, trees and two people on top of a brain">
+				<div class="banner-text">
+					<h1 class="b-title">
+						<span class="b-line1">BrainHack</span>
+						<span class="b-line2">Global Toronto <span class="b-year">2027</span></span>
+					</h1>
+					<p class="b-theme">Responsible, transparent, and reproducible AI for brain hacking</p>
+					<p class="b-date">January 20&ndash;22, 2027<span class="sep">&middot;</span><span class="b-place">SickKids, Toronto</span></p>
+					<a class="b-btn" href="#register-section">Register</a>
+				</div>
 			</div>
 		</header>
 
-		<section class="section about" id="about">
-			<div class="section-inner">
-				<p class="eyebrow">Open science, together</p>
-				<h2>Why Brainhack?</h2>
-				<p>Brainhacks bring people together to share ideas, learn from one another, and collaborate on open projects in brain science. Join a welcoming community to explore responsible, transparent, and reproducible approaches to AI for brain hacking.</p>
-			</div>
-		</section>
+	</span>
 
-		<section class="section details" id="details">
-			<div class="section-inner">
-				<p class="eyebrow">Save the dates</p>
-				<h2>Event details</h2>
-				<div class="detail-card">
-					<div>
-						<h3>When</h3>
-						<p>January 20–22, 2027</p>
+	<!-- First -->
+	<section id="info" class="main">
+		<header>
+			<div class="container">
+				<h2> Why Brainhack ?</h2>
+
+				<p> BrainHacks are collaborative events that focus on the open sharing of ideas, models, code, and data.
+					They bring together brain experts and enthusiasts from a variety of backgrounds to build
+					relationships, learn from one another, and collaborate on projects related to the neurosciences.
+				</p>
+				<p> BrainHack Global Toronto 2027 will be an in person event, featuring the theme of <b>Responsible, transparent, and reproducible AI for brain hacking</b>.
+					The event will be held in collaboration with Neuronto, the Ontario Brain Institute, SickKids Neuroscience & Mental Health, 
+					and CAMH's Krembil Centre for Neuroinformatics. Participants at BrainHack Global Toronto
+					2027 will have opportunities to work with like-minded scientists through either submitting an organized
+					project or engaging in one.
+				</p>
+				<p>
+					We also encourage new programmers and all levels of students/scientists to participate in our workshop this year.
+					We pair with the Hospital for Sick Children (SickKids) to provide TrainTrack sessions (i.e., tutorials and workshops) 
+					during the event to help kickstart your growth as a neurohacker. 
+				</p>
+
+				<!-- Youtube video embed -->
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/3tBMvtjTTCI?si=jQV3qiJcz8qhJ1FS" title="BrainHack Toronto 2026" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+				<p> Join us on <a href="https://discord.gg/HC7fumm79B" target="_blank">Discord</a> to join the community
+					of BrainHack Global Toronto 2027 and start planning your projects. We also have an official
+					<b>#brainhack-toronto</b> channel on <a
+						href="https://mattermost.brainhack.org/brainhack/channels/brainhack-toronto"
+						target="_blank">Mattermost</a>, where you can connect with the BrainHack Global community around
+					the world.
+				</p>
+
+				<div class="event-details">
+					<h3 class="details-title">BrainHack Toronto 2027</h3>
+					<table>
+						<tr>
+							<td align="left">
+								<b>Dates:</b>
+							</td>
+							<td align="left">
+								Jan 20-22, 2027
+							</td>
+						</tr>
+
+						<tr>
+							<td align="left">
+								<b>Cost:</b>
+							</td>
+							<td align="left">
+								CA$30/person for General admission including onsite breakfast & lunch
+								<!-- <br>
+								CA$5/person for the General admission of virtual participation
+								<br>
+								(Check out our Bring-a-Friend discount with CA$50 for 2!) -->
+								<br>
+								Additionally, we have allocated funds to assist with travel expenses for those coming from out of town. 
+								We encourage those who are interested to <a href="mailto:brainhacktoronto@gmail.com" target="_blank">send us an email</a> for further information.
+							</td>
+						</tr>
+						<tr>
+							<td align="left">
+								<b>Location:</b>
+							</td>
+							<td align="left">
+								Peter Gilgan Centre for Research and Learning (2nd Floor Gallery), SickKids, 686 Bay St., Toronto, ON M5G 0A4
+								<br> Hybrid option will be supported for talks and presentations, but not for open hacking. Link will be shared via Discord.
+							</td>
+						</tr>
+						<tr>
+							<td align="left">
+								<b>Note:</b>
+							</td>
+							<td align="left">We follow <a href="http://www.brainhack.org/code-of-conduct.html">the code
+									of conduct</a> of BrainHack Global.</td>
+						</tr>
+					</table>
+				</div>
+
+				<!-- Embedded Eventbrite checkout (event 2003679385981). It needs HTTPS, so it may not
+				     appear on a local http:// preview; it works on github.io. The link below always works. -->
+				<div id="register-section" class="register-embed">
+					<h3>Register</h3>
+					<div class="eb-frame" id="eventbrite-widget-container-2003679385981"></div>
+					<p class="eb-fallback">Form not loading? <a href="https://www.eventbrite.com/e/brainhack-global-toronto-2027-jan-20-22-tickets-2003679385981" target="_blank">Register on Eventbrite</a></p>
+				</div>
+
+				<div class="map-responsive">
+
+					<!-- Change z=xx for map zoom-->
+					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11546.188152472374!2d-79.3849272!3d43.6575916!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34ca3dd5da23%3A0x9399001f9e6cd4b4!2sPeter%20Gilgan%20Centre%20for%20Research%20and%20Learning!5e0!3m2!1sen!2sca!4v1728597288154!5m2!1sen!2sca" 
+					width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+				</div>
+			</div>
+		</header>
+
+		<div class="content dark style1 featured">
+			<div class="container">
+				<div class="row">
+					<div class="4u 12u(narrow)">
+						<section>
+							<span class="feature-icon">
+								<span class="icon fa-graduation-cap"></span>
+							</span>
+							<header>
+								<h3>Learn</h3>
+							</header>
+							<p>Learn about tools, techniques and datasets in neuroimaging research.</p>
+						</section>
 					</div>
-					<div>
-						<h3>Where</h3>
-						<p>Peter Gilgan Centre for Research and Learning, SickKids</p>
+					<div class="4u 12u(narrow)">
+						<section>
+							<span class="feature-icon">
+								<span class="icon fa-comments"></span>
+							</span>
+							<header>
+								<h3>Be Social</h3>
+							</header>
+							<p>Meet researchers from a variety of backgrounds. Share your knowledge.</p>
+						</section>
+					</div>
+					<div class="4u 12u(narrow)">
+						<section>
+							<span class="feature-icon">
+								<span class="icon fa-gears"></span>
+							</span>
+							<header>
+								<h3>Get Involved</h3>
+							</header>
+							<p>Find exciting projects that you would like to contribute to.</p>
+						</section>
 					</div>
 				</div>
-				<a class="button" href="https://www.eventbrite.com/e/brainhack-global-toronto-2027-jan-20-22-tickets-2003679385981">Register here</a>
 			</div>
-		</section>
-
-		<section class="section venue" id="venue">
-			<div class="section-inner">
-				<p class="eyebrow">Join us in Toronto</p>
-				<h2>Our venue</h2>
-				<p>Peter Gilgan Centre for Research and Learning, SickKids<br>686 Bay St., Toronto, ON M5G 0A4</p>
-				<a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Peter+Gilgan+Centre+for+Research+and+Learning%2C+686+Bay+St%2C+Toronto%2C+ON+M5G+0A4">View on map <span aria-hidden="true">↗</span></a>
-			</div>
-		</section>
-	</main>
-
-	<footer id="register">
-		<div class="section-inner footer-content">
-			<div>
-				<p class="eyebrow">Brainhack Toronto 2027</p>
-				<h2>Get in touch</h2>
-			</div>
-			<a class="text-link" href="mailto:brainhacktoronto@gmail.com">brainhacktoronto@gmail.com</a>
 		</div>
-		<p class="copyright">© Brainhack Toronto</p>
+	</section>
+
+	<!-- Second -->
+	<section id="schedule" class="main">
+		<header>
+			<div class="container">
+				<h2>Program</h2>
+				<p>
+					This three day event will bring together local scientists and trainees in neuroimaging from
+					institutions across the region.
+					The program will include:
+				</p>
+
+
+				<div class="row">
+					<div class="5u 12u(narrow)">
+						<figure class="venn">
+							<svg viewBox="0 0 600 612" role="img" aria-labelledby="venn-title venn-desc">
+								<title id="venn-title">What is a Brainhack?</title>
+								<desc id="venn-desc">A Brainhack combines three parts. Hackathon: open collaboration on participant-organized projects throughout the event. Unconference: presentation and panel content organized on-site by attendees. Educational: helps newer attendees learn software and data-analysis skills through live lectures and hands-on tutorials. Where they overlap: Ignite Talks, Meet and Greet, and Brainhacking 101.</desc>
+								<circle class="v-circle v-hack" cx="200" cy="215" r="175" />
+								<circle class="v-circle v-unconf" cx="400" cy="215" r="175" />
+								<circle class="v-circle v-edu" cx="300" cy="385" r="175" />
+								<text x="130" y="36" text-anchor="middle" class="v-title v-hack">Hackathon</text>
+								<text x="470" y="36" text-anchor="middle" class="v-title v-unconf">Unconference</text>
+								<text x="300" y="600" text-anchor="middle" class="v-title v-edu">Educational</text>
+								<text x="122" y="162" text-anchor="middle" class="v-desc v-hack-d">Open collaboration</text>
+								<text x="122" y="182" text-anchor="middle" class="v-desc v-hack-d">on projects led by</text>
+								<text x="122" y="202" text-anchor="middle" class="v-desc v-hack-d">participants</text>
+								<text x="122" y="222" text-anchor="middle" class="v-desc v-hack-d">throughout the event</text>
+								<text x="478" y="162" text-anchor="middle" class="v-desc v-unconf-d">Presentation and</text>
+								<text x="478" y="182" text-anchor="middle" class="v-desc v-unconf-d">panel content</text>
+								<text x="478" y="202" text-anchor="middle" class="v-desc v-unconf-d">organized on-site</text>
+								<text x="478" y="222" text-anchor="middle" class="v-desc v-unconf-d">by attendees</text>
+								<text x="300" y="420" text-anchor="middle" class="v-desc v-edu-d">Helps newer attendees learn</text>
+								<text x="300" y="440" text-anchor="middle" class="v-desc v-edu-d">software and data-analysis</text>
+								<text x="300" y="460" text-anchor="middle" class="v-desc v-edu-d">skills through live lectures</text>
+								<text x="300" y="480" text-anchor="middle" class="v-desc v-edu-d">and hands-on tutorials</text>
+								<text x="300" y="150" text-anchor="middle" class="v-mid v-hu">Ignite Talks</text>
+								<text x="198" y="340" text-anchor="middle" class="v-mid v-he">Meet &amp;</text>
+								<text x="198" y="359" text-anchor="middle" class="v-mid v-he">Greet</text>
+								<text x="402" y="340" text-anchor="middle" class="v-mid v-ue">Brainhacking</text>
+								<text x="402" y="359" text-anchor="middle" class="v-mid v-ue">101</text>
+								<circle class="v-core" cx="300" cy="272" r="40" />
+								<text x="300" y="286" text-anchor="middle" class="v-brain" aria-hidden="true">&#xf5dc;</text>
+							</svg>
+							<figcaption>Adapted from <a href="https://gigascience.biomedcentral.com/articles/10.1186/s13742-016-0121-x" target="_blank">Craddock et al. (2016), <i>GigaScience</i></a></figcaption>
+						</figure>
+					</div>
+					<div class="7u 12u(narrow)">
+						<ul class="info">
+							<li class="icon fa-cog">
+								<!-- Update information for better interoperability -->
+								<b>Open hacking</b> sessions in which attendees will work together on projects of their
+								own design. Attendees are encouraged but not required to bring their own projects into
+								the hackathon to work collaboratively with others. Project inspirations could stem from
+								other projects proposed by attendees, ongoing work you are involved in, or new research
+								areas that you have been waiting to have an opportunity to jump on.
+							</li>
+							<li class="icon fa-train"> <b> TrainTrack </b> to help you get up to speed
+								with various programming languages and current practices in open-source and
+								reproducible neuroimaging analysis. This year's TrainTrack, run with SickKids and KCNI, will cover
+								introductions to Python, LLMs, and agentic workflows for science.
+							</li>
+							<li> <i class="fas fa-handshake"></i> <b> Panel Discussions </b> to give attendees an overview
+								of brain science in the Greater Toronto Area and beyond. Speakers will be announced soon.
+							</li>
+							<li><i class="icon fa-microphone"></i> <b> Unconference sessions </b> to provide a welcoming
+								platform for attendees to share their tools, knowledge, and ideas. There will be three open slots
+								for attendees to sign up. If you are interested, please speak with a member of the organizing 
+								committee at the event. Sessions will be filled on a first-come, first-served basis.
+							</li>
+							<li><i class="icon fa-comment"></i> <b> Socials </b> will be held during hack nights
+								to foster community building.
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row" id="agenda-section">
+					<h2>Schedule</h2>
+				</div>
+
+				<!-- Edit assets/data/schedule.json to change the schedule -->
+				<div id="agenda" class="agenda" data-src="assets/data/schedule.json">
+					<noscript>Please enable JavaScript to view the schedule.</noscript>
+				</div>
+
+<!-- HIDDEN until 2027 details are confirmed: TrainTrack workshops, panels
+				<div id="workshop" class="row">
+					<h2>Workshops</h2>
+
+					<p>
+						BrainHack Global Toronto 2026 will work with the Centre for Computational Medicine (CCM) 
+						at The Hospital of Sick Children (SickKids) and feature three tutorial sessions for our TrainTrack
+						to enhance the computational literacy of neuroscientists across all levels.
+					</p>
+					<p>
+						<ul>
+ 						 	<li>1. Tue Jan 20, 10:30 AM – 11:30 AM: <b>Introduction to Python</b> (Presenter: Michael Li)</li>
+ 							<li>2. Tue Jan 20, 01:00 PM – 02:00 PM: <b>Introduction to machine learning using R</b> (Presenter: Dr. Shireen Parimoo)</li>
+ 						 	<li>3. Wed Jan 21, 11:00 AM – 12:00 PM: <b>Introduction to deep learning and AI</b> (Presenter: Dr. Alper Celik)</li>
+						</ul>
+					</p>
+
+				</div>
+
+				<div id="panel" class="row">
+					<h2><a id="panel_career"></a> Opening Panel: <b>Building Bridges in Brain Data in Toronto</b></h2>
+					<h3>January 19, 9:30 AM - 11:30 AM</h3>
+				</div>
+				<div>
+					<ul>
+ 					 	<li>9:30 - 9:50 <b>Tristan Glatard</b> <i>The Brain Health Data Challenge Platform</i></li>
+ 						<li>9:50 - 10:10 <b>Kâmil Uludağ</b> <i>Opportunities and Challenges of 7 Tesla MRI Research in Toronto</i></li>
+ 					 	<li>10:10 - 10:30 <b>Rosanna Olsen</b><i>Overview of Hippocampal Subfield Segmentation Methods: Best Practices for Validity and Reliability</i></li>
+						<li>10:30 - 10:50 <b>Milad Lankarany</b><i>Using Computational Neuroscience to Optimize Neuromodulation</i></li>
+ 						<li>10:50 - 11:10 <b>Farzad Khalvati</b>: <i>Toward Precision Neuroradiology: The Present and Future Role of AI</i></li>
+						<li>11:10 - 11:30 <b>Panel discussion</b>: <i>Building Bridges in Brain Data and how current and future initiatives, such as BrainHack toronto, can support this goal</i></li>
+					</ul>
+				</div>
+					
+				<!~~ Add flexbox div container horizontal here use placeholder~~>
+				<div class="panelists">
+					<div class="career-box"><img class="panelist-box" src="./images/panelists/Tristan.jpg"
+							alt="panelist-box"></div>
+					<div class="career-box"><img class="panelist-box" src="./images/panelists/Kamil.jpg"
+							alt="panelist-box"></div>
+					<div class="career-box"><img class="panelist-box" src="./images/panelists/Rosanna.jpg"
+							alt="panelist-box"></div>
+					<div class="career-box"><img class="panelist-box" src="./images/panelists/milad.jpg"
+							alt="panelist-box"></div>
+					<div class="career-box"><img class="panelist-box" src="./images/panelists/Farzad.jpeg"
+							alt="panelist-box"></div>
+				</div>
+
+				<!~~ Goal on hover of above, call a JS script that writes into panelist-test~~>
+				<div class="text-parent">
+					<div id="career-person"></div>
+					<div id="career-job"></div>
+					<div id="career-bio"></div>
+				</div>
+
+				<div id="panel_global" class="row">
+					<h2><a id="panel_global"></a> Featured Panel: <b>Making BrainHack Global Again</b></h2>
+					<h3>January 20, 9:00 AM - 10:00 AM</h3>
+				</div>
+					<p>
+						BrainHack Global Toronto 2026 is excited to invite speakers from different BrainHack locations
+						around the world--Taiwan, Montreal, and Marseille--to share their experiences and insights on their experience in participating
+						and organizing their BrainHack. Our speakers include:
+					</p>
+					<p>
+						<ul>
+ 						 	<li>09:00 - 09:15 Taiwan (participants): Amanda Lin & Ivo Niet</li>
+							<li>09:15 - 09:25 Taiwan (organizer): Dr. Tzu-Yu Hsu</li>
+ 							<li>09:25 - 09:35 Marseille (organizing team)</li>
+ 						 	<li>09:35 - 09:45 Montreal (organizers): Mathieu Dugré & Michelle Wang </li>
+							<li>09:45 - 10:00 <b>Panel discussion</b>: <i>What you gain from participating in BrainHack and what are the challenges you face organizing one</i></li>
+						</ul>
+					</p>
+
+
+
+-->
+				<div id="team" class="row">
+					<h2>Meet Our Team</h2>
+				</div>
+
+				<div class="subcomittee-container">
+					<div class="flex-item"><img src="./images/committee/erin.jpeg">
+						<div class="description-text">
+							<div>Erin Dickie</div>
+							<div><i>CAMH, KCNI</i></div>
+							<div>Chair</div>
+							<div><a href="https://github.com/edickie/"><i class="icon fa-github"></i></a>
+								<a href="https://x.com/ErinWDickie"><svg class="x-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+							</div>
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/kathryn.jpg">
+						<div class="description-text">
+							<div>Kathryn Manning</div>
+							<div><i>SickKids</i></div>
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/tristan.jpg">
+						<div class="description-text">
+							<div>Tristan Glatard</div>
+							<div><i>CAMH, KCNI</i></div>
+							<div></div>
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/julie.jpeg">
+						<div class="description-text">
+							<div>Julie Ruston</div>
+							<div><i>SickKids</i></div>
+							<div></div>
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/francis.jpg">
+						<div class="description-text">
+							<div>Francis Jeanson</div>
+							<div><i>OBI</i></div>
+							<div>
+							</div>
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/Ju-Chi.jpg">
+						<div class="description-text">
+							<div>Ju-Chi Yu</div>
+							<div><i>CAMH</i></div>
+							<div><a href="https://github.com/juchiyu/"><i class="icon fa-github"></i></a>
+								<a href="https://x.com/juchiyu"><svg class="x-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+							</div>
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/Minarose.jpg">
+						<div class="description-text">
+							<div>Minarose Ismail</div>
+							<div><i>SickKids</i></div>
+							<div><a href="https://github.com/Minarose"><i class="icon fa-github"></i></a>
+								<a href="https://x.com/MinaroseIsmail"><svg class="x-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+							</div>
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/ryan.jpeg">
+						<div class="description-text">
+							<div>Ryan Panela</div>
+							<div><i>Baycrest</i></div>
+							<div><a href="https://github.com/RyanAPanela"><i class="icon fa-github"></i></a>
+								<a href="https://x.com/RyanAPanela"><svg class="x-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+							</div>
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/Justin.jpg">
+						<div class="description-text">
+							<div>Justin Ng</div>
+							<div><i>CAMH</i></div>
+							<div><a href="https://github.com/14jwkn"><i class="icon fa-github"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/stephanie.jpg">
+						<div class="description-text">
+							<div>Stephanie Simpson</div>
+							<div><i>CAMH</i></div>
+							<div><a href="https://github.com/stefsimpson"><i class="icon fa-github"></i></a>
+								<a href="https://x.com/stf_simpson"><svg class="x-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+							</div>
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/ayesha.jpg">
+						<div class="description-text">
+							<div>Ayesha Rashidi</div>
+							<div><i>CAMH</i></div>
+							<div><a href="https://github.com/ayeshagrr"><i class="icon fa-github"></i></a>
+								<a href="https://x.com/AyeshaRashidi"><svg class="x-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a>
+							</div>
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/jiya.jpg">
+						<div class="description-text">
+							<div>Jiya Shah</div>
+							<div><i>CAMH</i></div>
+							<div>
+							</div>
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/mathieu.png">
+						<div class="description-text">
+							<div>Mathieu Dugré</div>
+							<div><i>Concordia University</i></div>
+							<div><a href="https://github.com/mathdugre"><i class="icon fa-github"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/Daisy.jpg">
+						<div class="description-text">
+							<div>Daisy Hu</div>
+							<div><i>UofT</i></div>
+							<!-- <div><a href="https://github.com/mathdugre"><i class="icon fa-github"></i></a>
+							</div> -->
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/alena.jpg">
+						<div class="description-text">
+							<div>Alena Ionova</div>
+							<div><i>SickKids</i></div>
+							<div><a href="https://github.com/alenaion"><i class="icon fa-github"></i></a>
+								<!-- <a href="https://x.com/AyeshaRashidi"><svg class="x-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a> -->
+							</div>
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/grace_volunteer.jpeg">
+						<div class="description-text">
+							<div>Grace Burns</div>
+							<div><i>SickKids</i></div>
+							<div><a href="https://github.com/burnsg5"><i class="icon fa-github"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/Julia_new.jpg">
+						<div class="description-text">
+							<div>Julia Qiu</div>
+							<div><i>University of Waterloo</i></div>
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/gulnaz.jpg">
+						<div class="description-text">
+							<div>Gulnaz Kudoiarova</div>
+							<div><a href="https://github.com/g-kudo"><i class="icon fa-github"></i></a></div>
+						</div>
+					</div>
+					<div class="flex-item"><img src="./images/committee/kant.jpg">
+						<div class="description-text">
+							<div>Kant Yao</div>
+							<div><i>CAMH</i></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="team-join">
+					<p>
+						<b>If you are interested in joining our organizing team and the volunteering committee, please do not hesitate to <a href="#contact">contact us</a>.</b>
+					</p>
+				
+				</div>
+
+
+					<div class="container">
+						<div class="12u 12u(narrow)">
+
+							<!-- <h2>Social Events</h2> -->
+							<div class="row">
+								<div class="3u"></div>
+								<!-- <div>
+							<i class="icon fa-code"></i> Hacknight with
+							<a href="http://neurotechx.com/chapter/1531/">NeuroTechTO</a> on Thursday evening @ Mozilla
+						</div> -->
+							</div>
+							<div class="row">
+								<div class="3u"></div>
+								<!--<div>
+							<i class="icon fa-coffee"></i> A social outing on Friday evening @
+							<a href="http://fabrestaurants.ca/restaurant/thegoodman/">Goodman Pub & Kitchen</a>
+						</div> --->
+							</div>
+
+						</div>
+					</div>
+		</header>
+	</section>
+
+
+
+
+
+
+	<section id="projects" class="main">
+		<div class="content dark style2">
+			<div class="container">
+				<div class="row">
+					<div class="8u 12u(narrow)">
+						<section>
+							<h3>Project Ideas</h3>
+							<p>
+								Open hacking projects are a great forum for getting support on a technical issue from
+								your own research program or starting
+								a new collaborative project. Check out our previous
+
+								<a href="https://brainhack.org/global2023/projects/" target="_blank">project listing from BrainHack Global 2023</a>
+								or
+								<a href="https://github.com/brainhackto/brainhack-toronto-01-2027/issues/new?template=project_submit.yml"
+									target="_blank">suggest your own</a>.
+							</p>
+						</section>
+					</div>
+					<div class="4u 12u(narrow)">
+						<a href="https://github.com/brainhackto/brainhack-toronto-01-2027/issues/new?template=project_submit.yml"
+							target="_blank">
+							<span class="feature-icon">
+								<span class="icon fa-clipboard"></span>
+							</span>
+							<h4>Suggest a Project</h4>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+<!-- HIDDEN until 2027 details are confirmed: sponsors
+	<!~~ SPONSORS ~~>
+	<section id="sponsors" class="main">
+		<header>
+			<div class="container">
+				<h2>Thank you to our sponsors</h2>
+
+				<div class="supporters-grid">
+				<a href="http://braininstitute.ca/" target="_blank" class="supporter">
+					<img src="images/OBI_CA_ENG_FRE.png" alt="Ontario Brain Institute" />
+				</a>
+
+				<a href="http://www.camh.ca/en/research/research_areas/krembil-centre-for-neuroinformatics"
+					target="_blank" class="supporter">
+					<img src="images/KCNI_with_brain.jpeg" alt="CAMH KCNI" />
+				</a>
+
+				<a href="https://www.sickkids.ca/en/research/research-programs/neurosciences-mental-health/"
+					target="_blank" class="supporter">
+					<img src="images/SickKids_research.png" alt="SickKids Research Institute" />
+				</a>
+
+				<a href="https://www.uhn.ca/" target="_blank" class="supporter">
+					<img src="images/logo-knc.png" alt="UHN Krembil" />
+				</a>
+
+				<span class="supporter">
+					<img src="images/neuronto.png" alt="Neuronto" />
+				</span>
+
+				</div>
+			</div>
+		</header>
+
+		</div>
+
+
+	</section>
+-->
+	<section id="sponsors" class="main">
+	<header>
+		<div class="container">
+		<h2>Bringing together minds from:</h2>
+
+		<div class="logo-grid">
+			<a href="https://www.psych.utoronto.ca/" target="_blank" class="logo-item">
+			<img src="images/uoft_logo.png" alt="University of Toronto">
+			</a>
+
+			<a href="https://www.baycrest.org/Baycrest/Research-Innovation/About-Us/Rotman-Research-Institute"
+			target="_blank" class="logo-item">
+			<img src="images/baycrest_logo.png" alt="Baycrest" style="max-width: 80%;" />
+			</a>
+			
+			<a href="https://research.sunnybrook.ca/" target="_blank" class="logo-item">
+			<img src="images/sunnybrook_logo.png" alt="Sunnybrook Health Sciences">
+			</a>
+			
+			<a href="http://www.camh.ca" target="_blank" class="logo-item">
+			<img src="images/camh-logo-ENGLISH-rgb.jpg" alt="CAMH" />
+			</a>
+
+			<a href="http://www.uhn.ca/" target="_blank" class="logo-item">
+			<img src="images/uhn.png" alt="University Health Network" />
+			</a>
+			
+			<a href="http://www.stmichaelshospital.com/" target="_blank" class="logo-item">
+			<img src="images/st_michaels.png" alt="St. Michael's Hospital" />
+			</a>
+			
+			<a href="http://www.mouseimaging.ca/" target="_blank" class="logo-item">
+			<img src="images/mice_logo_padded.png" alt="Mouse Imaging Centre" />
+			</a>
+
+			<a href="https://neurotechx.herokuapp.com/" target="_blank" class="logo-item">
+			<img src="images/neurotechx_logo.png" alt="NeuroTechX" />
+			</a>
+
+			<a href="http://braininstitute.ca/" target="_blank" class="logo-item">
+			<img src="images/mozilla-.png" alt="Ontario Brain Institute" />
+			</a>
+
+		</div>
+		</div>
+
+		<div class="container">
+			<p class="logo-more"><span>and many more</span></p>
+		</div>
+	</header>
+	</section>
+
+
+
+
+	<!-- Footer / contact -->
+	<footer id="contact" class="site-footer">
+		<div class="footer-inner">
+			<div class="footer-col footer-brand">
+				<p class="footer-name">BrainHack Toronto 2027</p>
+				<p>January 20&ndash;22, 2027<br>Peter Gilgan Centre for Research and Learning, SickKids<br>686 Bay St., Toronto, ON</p>
+			</div>
+			<div class="footer-col">
+				<h2 class="footer-label">Contact</h2>
+				<p><a href="mailto:brainhacktoronto@gmail.com">brainhacktoronto@gmail.com</a></p>
+			</div>
+			<div class="footer-col">
+				<h2 class="footer-label">Connect</h2>
+				<ul class="footer-links">
+					<li><a href="https://discord.gg/HC7fumm79B" target="_blank" rel="noopener"><i class="fab fa-discord" aria-hidden="true"></i>Discord</a></li>
+					<li><a href="https://x.com/brainhackto" target="_blank" rel="noopener"><svg class="x-logo" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>X</a></li>
+					<li><a href="https://github.com/brainhackto/brainhack-toronto-01-2027" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i>GitHub</a></li>
+					<li><a href="http://www.brainhack.org/code-of-conduct.html" target="_blank" rel="noopener"><i class="fas fa-users" aria-hidden="true"></i>Code of Conduct</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<span>&copy; 2027 BrainHack Toronto</span>
+			<span>Design based on <a href="http://html5up.net" target="_blank" rel="noopener">HTML5 UP</a></span>
+		</div>
 	</footer>
+
+	<!-- Eventbrite embedded checkout -->
+	<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
+	<script>
+		// Eventbrite refuses to load the form on non-HTTPS pages (e.g. a local preview),
+		// so there we show only the link to Eventbrite.
+		if (location.protocol !== 'https:') {
+			document.getElementById('eventbrite-widget-container-2003679385981').style.display = 'none';
+			document.querySelector('#register-section .eb-fallback').className = 'eb-fallback eb-only';
+		} else try {
+			window.EBWidgets.createWidget({
+				widgetType: 'checkout',
+				eventId: '2003679385981',
+				iframeContainerId: 'eventbrite-widget-container-2003679385981',
+				iframeContainerHeight: 560
+			});
+		} catch (e) { /* fallback link stays visible */ }
+	</script>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- Script for writing into divs worklife-text -->
+	<script>
+		// Get relevant elements
+		var worklife_boxes = Array.from(document.getElementsByClassName("worklife-box"))
+		// This function will write into a div
+		function displayWorklife(evt) {
+			var person = evt.currentTarget.person;
+			var job = evt.currentTarget.job;
+			var bio = evt.currentTarget.bio;
+			console.log(evt.currentTarget);
+			console.log(person);
+			console.log(job);
+			console.log(bio);
+			// Fill in
+			$("#worklife-person").fadeOut(function (evt) {
+				$(this).text(person).fadeIn();
+			});
+			$("#worklife-job").fadeOut(function (evt) {
+				$(this).text(job).fadeIn();
+			});
+			$("#worklife-bio").fadeOut(function (evt) {
+				$(this).text(bio).fadeIn();
+			});
+		}
+		// Read JSON object
+		$.getJSON("assets/data/worklife.json", function (data) {
+			// For each worklife-box assign an event listener
+			worklife_boxes.map((obj, ind) => {
+				console.log(obj)
+				console.log(ind)
+				obj.person = data[ind].person
+				obj.job = data[ind].job
+				obj.bio = data[ind].bio
+				obj.addEventListener("mouseover", displayWorklife)
+			});
+		});
+	</script>
+
+	<!-- Script for writing into divs worklife-text -->
+	<script>
+		// Get relevant elements
+		var era_boxes = Array.from(document.getElementsByClassName("era-box"))
+		// This function will write into a div
+		function displayEra(evt) {
+			var person = evt.currentTarget.person;
+			var job = evt.currentTarget.job;
+			var bio = evt.currentTarget.bio;
+			console.log(evt.currentTarget);
+			console.log(person);
+			console.log(job);
+			console.log(bio);
+			// Fill in
+			$("#era-person").fadeOut(function (evt) {
+				$(this).text(person).fadeIn();
+			});
+			$("#era-job").fadeOut(function (evt) {
+				$(this).text(job).fadeIn();
+			});
+			$("#era-bio").fadeOut(function (evt) {
+				$(this).text(bio).fadeIn();
+			});
+		}
+		// Read JSON object
+		$.getJSON("assets/data/era.json", function (data) {
+			// For each worklife-box assign an event listener
+			era_boxes.map((obj, ind) => {
+				console.log(obj)
+				console.log(ind)
+				obj.person = data[ind].person
+				obj.job = data[ind].job
+				obj.bio = data[ind].bio
+				obj.addEventListener("mouseover", displayEra)
+			});
+		});
+	</script>
+
+	<!-- Script for writing into divs career-text -->
+	<script>
+		// Get relevant elements
+		var career_boxes = Array.from(document.getElementsByClassName("career-box"))
+		// This function will write into a div
+		function displayCareer(evt) {
+			var person = evt.currentTarget.person;
+			var job = evt.currentTarget.job;
+			var bio = evt.currentTarget.bio;
+			$("#career-person").fadeOut(function (evt) {
+				$(this).text(person).fadeIn();
+			});
+			$("#career-job").fadeOut(function (evt) {
+				$(this).text(job).fadeIn();
+			});
+			$("#career-bio").fadeOut(function (evt) {
+				$(this).text(bio).fadeIn();
+			});
+		}
+		// Read JSON object
+		$.getJSON("assets/data/career.json", function (data) {
+			// For each career-box assign an event listener
+			career_boxes.map((obj, ind) => {
+				obj.person = data[ind].person
+				obj.job = data[ind].job
+				obj.bio = data[ind].bio
+				obj.addEventListener("mouseover", displayCareer)
+			});
+		});
+	</script>
+
+
+	<!-- Script for writing into divs career-text -->
+	<script>
+		// Get relevant elements
+		var mri_boxes = Array.from(document.getElementsByClassName("mri-box"))
+		// This function will write into a div
+		function displayMri(evt) {
+			var person = evt.currentTarget.person;
+			var job = evt.currentTarget.job;
+			var bio = evt.currentTarget.bio;
+			$("#mri-person").fadeOut(function (evt) {
+				$(this).text(person).fadeIn();
+			});
+			$("#mri-job").fadeOut(function (evt) {
+				$(this).text(job).fadeIn();
+			});
+			$("#mri-bio").fadeOut(function (evt) {
+				$(this).text(bio).fadeIn();
+			});
+		}
+		// Read JSON object
+		$.getJSON("assets/data/mri.json", function (data) {
+			// For each mri-box assign an event listener
+			mri_boxes.map((obj, ind) => {
+				obj.person = data[ind].person
+				obj.job = data[ind].job
+				obj.bio = data[ind].bio
+				obj.addEventListener("mouseover", displayMri)
+			});
+		});
+	</script>
 </body>
+
 </html>
