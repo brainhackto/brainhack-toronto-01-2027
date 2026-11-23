@@ -1,0 +1,27 @@
+[
+	{
+		"person":"Tristan Glatard, Ph.D.", 
+		"job": "Scientific Director, Krembil Centre for Neuroinformatics, Centre for Addiction and Mental Health",
+	    "bio": "Dr. Tristan Glatard is the Scientific Director of the Krembil Centre for Neuroinformatics at the Centre for Addiction and Mental Health (CAMH), as well as the inaugural BMO Chair in Artificial Intelligence and Mental Health. Previously, he served as a Professor of Computer Science and Software Engineering at Concordia University in Montreal, held a Tier II Canada Research Chair in Big Data for Neuroinformatics, was a Visiting Scholar at McGill University, worked as a Research Scientist at the French National Centre for Scientific Research, and completed a Postdoctoral fellowship at the University of Amsterdam. His research interests include neuroinformatics, grid and cloud computing, science gateways, and performance optimization of medical imaging applications."
+	},
+	{
+		"person":"Kâmil Uludağ, Ph.D.", 
+		"job": "Senior scientist, Krembil Brain Institute, University Health Network, Sunnybrook Research Institute",
+	    "bio": "Kâmil Uludağ studied from 1992 till 1997 Physics at the Technical University of Berlin. He completed his Ph.D. in Physics in 2003 on Near-Infrared Optical Spectroscopy (Humboldt University, Berlin) and moved for a postdoc position to the Center for Functional MRI (UCSD, San Diego, USA) to work on the physiological and physical basis of functional MRI. In 2004, he was appointed Head of Human Brain Imaging group at the Max-Planck-Institute for Biological Cybernetics, Tübingen. From June 2010 to December 2018, he was Associate Professor in the Faculty of Psychology & Neuroscience and Head of the Department of Cognitive Neuroscience continuing his work on the basis of fMRI utilizing the new Ultra-High Field human MRI scanners (7 and 9.4 Tesla). Since May 2019, he is Full Professor at the Department of Medical Biophysics, University of Toronto."
+	},
+	{
+		"person":"Rosanna Olsen, Ph.D.", 
+		"job": "Scientist, Rotman Research Institute, Baycrest Health Sciences",
+	    "bio": "Dr. Olsen is the passionate leader and director of the Olsen Lab. She is a Scientist at the Rotman Research Institute (RRI) at Baycrest and an Associate Professor, Status-Only at the University of Toronto. She received her PhD in Psychology with concentration in cognitive neuroscience from Stanford University in California. She then completed her postdoctoral fellowship at Rotman Research Institute at Baycrest. She is interested in understanding how our brains support the ability to create new memories and remember our past. She studies how the brain changes with age, due to brain atrophy, and how this brain atrophy relates to declines in memory. Her research uses high-resolution structural and functional neuroimaging, as well as eye movement monitoring, to investigate memory formation, retention, and retrieval."
+	},
+	{
+		"person":"Milad Lankarany, Ph.D.", 
+		"job": "Scientist, Krembil Research Institute, University Health Network, Toronto Western Hospital",
+	    "bio": "Dr. Lankarany is an early career investigator with a unique combination of knowledge: he has a PhD in electrical engineering (Concordia University, Montreal, Canada) and expertise in theoretical and computational neuroscience (Post-doc, SickKids, Canada), as well as advanced signal processing and information theory (Industrial Post-doc, Myant Inc). He has 10+ years of experience working with digital and analogue circuits. During his 2 years at the company Myant, he implemented advanced signal processing algorithms on micro-controllers and FPGAs and designed and developed analog circuits for sensing very weak electrophysiological signals (like EEG) using dry electrodes. He also gained experience performing in vitro experiments and using the dynamic clamp technique during his postdoctoral training at the Hospital for Sick Children (SickKids)."
+	},
+	{
+		"person":"Farzad Khalvati, Ph.D.", 
+		"job": "Senior Scientist, The Hospital for Sick Children",
+	    "bio": "Dr. Farzad Khalvati is a Senior Scientist and Endowed Chair in Medical Imaging and Artificial Intelligence (AI) and Director of the Intelligent Medical Informatics Computing Systems (IMICS) Lab at The Hospital for Sick Children (SickKids). He is an Associate Professor in the Department of Medical Imaging and Institute of Medical Science, with cross appointments to the Departments of Computer Science, and Mechanical and Industrial Engineering. Dr. Khalvati’s research program is focussed on the design and development of Artificial Intelligence (AI) solutions for Medical Imaging and Precision Medicine. He leads the design, discovery, and validation of AI-based quantitative imaging biomarkers (radiomics) for diagnosis and prognosis of different cancer sites (e.g., brain) with the goal of delivering precision medicine and compassionate healthcare to patients."
+	}
+]

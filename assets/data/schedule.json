@@ -1,0 +1,54 @@
+{
+	"_howto": "Edit this file to change the schedule on the website. Times are Toronto local time (24h). 'type' controls the colour: hacking, workshop, talk, break, social, logistics. Optional fields per session: speaker, location, description. Set status to 'final' once the schedule is confirmed to remove the 'tentative' notice.",
+	"status": "draft",
+	"timezone": "America/Toronto",
+	"location": "Peter Gilgan Centre for Research and Learning, 2nd Floor Gallery, 686 Bay St., Toronto, ON M5G 0A4",
+	"days": [
+		{
+			"date": "2027-01-20",
+			"label": "Day 1",
+			"sessions": [
+				{ "start": "08:00", "end": "09:00", "title": "Registration & Breakfast", "type": "logistics" },
+				{ "start": "09:00", "end": "09:20", "title": "BrainHack Introduction and Welcome", "type": "logistics" },
+				{ "start": "09:20", "end": "09:30", "title": "Sponsor Talks", "type": "talk" },
+				{ "start": "09:30", "end": "09:50", "title": "Coffee Break", "type": "break" },
+				{ "start": "09:50", "end": "11:30", "title": "Opening Panel", "type": "talk", "description": "Speakers to be announced." },
+				{ "start": "11:30", "end": "13:00", "title": "Lunch & Networking", "type": "break" },
+				{ "start": "13:00", "end": "15:00", "title": "Ice Breaker, Project Pitches & Team Formation", "type": "hacking" },
+				{ "start": "15:00", "end": "15:30", "title": "Coffee Break", "type": "break" },
+				{ "start": "15:30", "end": "16:30", "title": "Unconference Session I & Open Hacking", "type": "hacking", "description": "Unconference slots are open for sign-up at the event." },
+				{ "start": "16:30", "end": "17:00", "title": "Open Hacking & Ask-Me-Anything Hour", "type": "hacking" }
+			]
+		},
+		{
+			"date": "2027-01-21",
+			"label": "Day 2",
+			"sessions": [
+				{ "start": "09:00", "end": "10:00", "title": "Featured Panel", "type": "talk", "description": "Speakers to be announced." },
+				{ "start": "10:00", "end": "10:30", "title": "Coffee Break", "type": "break" },
+				{ "start": "10:30", "end": "11:30", "title": "TrainTrack I / Open Hacking", "type": "workshop" },
+				{ "start": "11:30", "end": "12:00", "title": "Open Hacking", "type": "hacking" },
+				{ "start": "12:00", "end": "13:00", "title": "Lunch & Networking", "type": "break" },
+				{ "start": "13:00", "end": "14:40", "title": "TrainTrack II / Open Hacking", "type": "workshop" },
+				{ "start": "14:40", "end": "15:00", "title": "Coffee Break", "type": "break" },
+				{ "start": "15:00", "end": "16:00", "title": "Unconference Session II & Open Hacking", "type": "hacking", "description": "Unconference slots are open for sign-up at the event." },
+				{ "start": "16:00", "end": "17:00", "title": "Open Hacking", "type": "hacking" },
+				{ "start": "17:00", "end": "19:00", "title": "Games, Food & Social", "type": "social" }
+			]
+		},
+		{
+			"date": "2027-01-22",
+			"label": "Day 3",
+			"sessions": [
+				{ "start": "09:00", "end": "10:00", "title": "Breakfast & Open Hacking", "type": "hacking" },
+				{ "start": "10:00", "end": "10:20", "title": "Unconference Session III & Open Hacking", "type": "hacking", "description": "Unconference slots are open for sign-up at the event." },
+				{ "start": "10:20", "end": "10:40", "title": "Coffee Break", "type": "break" },
+				{ "start": "10:40", "end": "12:00", "title": "BrainHack Toronto Committee Meeting (all are invited) & Open Hacking", "type": "hacking" },
+				{ "start": "12:00", "end": "13:00", "title": "Lunch & Networking", "type": "break" },
+				{ "start": "13:00", "end": "14:00", "title": "TrainTrack III / Open Hacking", "type": "workshop" },
+				{ "start": "14:00", "end": "15:00", "title": "Open Hacking", "type": "hacking" },
+				{ "start": "15:00", "end": "17:00", "title": "Project Presentations & Wrap-Up", "type": "talk" }
+			]
+		}
+	]
+}

@@ -1,0 +1,82 @@
+name: BrainHack Toronto 2027 Project Submission
+description: Please submit your project.
+title: "[Project]: "
+labels: ["project"]
+assignees:
+  - ["juchiyu", "edickie", "ryanapanela"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for submitting a BrainHack project!
+  - type: input
+    id: title
+    attributes:
+      label: Title 
+      description: Please provide a title for your session.
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Host and Affiliation
+      description: Who are you and what is your affiliation?
+      placeholder: e.g., "Jane Doe, Organization or University"
+    validations:
+      required: true
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Short description and the goals for the session
+      description: Please provide a short description of the session and what you hope to achieve.
+      placeholder: Insert a short description of the session and what you hope to achieve
+    validations:
+      required: true
+  - type: textarea
+    id: links
+    attributes:
+      label: Useful links
+      description: Please provide links to any relevant materials (e.g., website, repo, slides, papers, etc.)
+      placeholder: Please enter NA if not applicable.
+    validations:
+      required: true
+  - type: textarea
+    id: github
+    attributes:
+      label: Relevant GitHub Users
+      description: Please @ the GitHub usernames of people you wish to include.
+      placeholder: Please enter NA if not applicable.
+    validations:
+      required: false
+  - type: dropdown
+    id: skills
+    attributes:
+      label: What skills do you require from participants? (Select all that apply)
+      multiple: true
+      options:
+        - Python
+        - R
+        - Matlab
+        - Bash/Shell scripting
+        - Git & GitHub
+        - Neuroimaging
+        - Machine Learning / AI
+        - Data Visualization
+        - Statistics
+        - Nothing really, just interested!
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Agreement to Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](http://www.brainhack.org/code-of-conduct.html).
+      options:
+        - label: I agree to follow BrainHack's Code of Conduct
+          required: true

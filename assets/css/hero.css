@@ -1,0 +1,250 @@
+/* Top-of-page banner: Toronto skyline on the left, fading into BrainHack blue,
+   with the BrainHack illustration and event details on the right.
+   Update the year, theme and dates in index.html each year. */
+.header-logo { display: block; height: auto !important; margin: 0 !important; background: none !important; }
+.banner {
+	/* colours sampled from the skyline photo (sky -> horizon -> water), slightly deepened for text contrast */
+	--sky: linear-gradient(to bottom, #4f63c2 0%, #6a70bd 24%, #8582bc 44%, #77739f 60%, #464a74 78%, #4f4e7a 100%);
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	/* kept short enough that the photo is never stretched past its real size */
+	height: clamp(400px, 34vw, 500px);
+	width: 100%;
+	background: var(--sky);
+	font-family: 'Montserrat', sans-serif;
+}
+.banner-photo {
+	/* photo keeps its own shape (no stretching) and fades out to the right */
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	aspect-ratio: 1312 / 505;
+	background-image: url("../../images/toronto-skyline.jpg");
+	background-image: image-set(url("../../images/toronto-skyline.jpg") 1x, url("../../images/toronto-skyline@2x.jpg") 2x);
+	background-size: cover;
+	background-position: left center;
+	background-repeat: no-repeat;
+	-webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.95) 36%, rgba(0,0,0,0.86) 42%, rgba(0,0,0,0.72) 48%, rgba(0,0,0,0.55) 54%, rgba(0,0,0,0.37) 60%, rgba(0,0,0,0.21) 66%, rgba(0,0,0,0.09) 72%, rgba(0,0,0,0.03) 77%, rgba(0,0,0,0) 82%);
+	mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 30%, rgba(0,0,0,0.95) 36%, rgba(0,0,0,0.86) 42%, rgba(0,0,0,0.72) 48%, rgba(0,0,0,0.55) 54%, rgba(0,0,0,0.37) 60%, rgba(0,0,0,0.21) 66%, rgba(0,0,0,0.09) 72%, rgba(0,0,0,0.03) 77%, rgba(0,0,0,0) 82%);
+}
+.banner-fade { display: none; }
+.banner-content {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	gap: clamp(1em, 2.5vw, 2.5em);
+	width: 50%;
+	padding: 2em clamp(1.25em, 4vw, 4em) 2em 0;
+}
+.banner-art {
+	flex: 0 0 auto;
+	width: clamp(180px, 19vw, 310px);
+	height: auto;
+	/* white outline (four tight shadows) + soft drop shadow */
+	filter:
+		drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff)
+		drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff)
+		drop-shadow(0 14px 18px rgba(20, 22, 60, 0.5));
+	animation: banner-float 6s ease-in-out infinite;
+}
+@keyframes banner-float {
+	0%, 100% { transform: translateY(0); }
+	50% { transform: translateY(-8px); }
+}
+@media (prefers-reduced-motion: reduce) { .banner-art { animation: none; } }
+
+.banner-text { flex: 1 1 auto; min-width: 0; text-align: left; color: #fff; }
+.banner .b-title {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 900;
+	line-height: 1;
+	letter-spacing: -0.01em;
+	color: #fff;
+	text-transform: none;
+	text-shadow: 0 3px 0 rgba(17, 60, 117, 0.5), 0 8px 20px rgba(10, 30, 70, 0.5);
+}
+.banner .b-title .b-line1 { display: block; font-size: clamp(2.2rem, 4vw, 4rem); }
+.banner .b-title .b-line2 { display: block; font-size: clamp(1.2rem, 2.2vw, 2.2rem); margin-top: 0.15em; }
+.banner .b-title .b-year { color: #ade4f1; }
+.banner p.b-theme {
+	display: inline-block;
+	margin: 0.9em 0 0;
+	padding: 0.5em 1em;
+	border-radius: 14px;
+	background: rgba(255, 255, 255, 0.92);
+	box-shadow: 0 6px 18px rgba(10, 30, 70, 0.22);
+	text-align: left !important;
+	color: #113c75;
+	font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+	font-weight: 700;
+	line-height: 1.35;
+}
+.banner p.b-date {
+	margin: 0.8em 0 0;
+	text-align: left !important;
+	color: #fff;
+	font-size: clamp(1.05rem, 1.7vw, 1.6rem);
+	font-weight: 800;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	text-shadow: 0 2px 10px rgba(10, 30, 70, 0.6);
+}
+.banner p.b-date .b-place { display: block; margin-top: 0.25em; font-size: 0.68em; font-weight: 700; letter-spacing: 0.12em; }
+.banner p.b-date .sep { display: none; }
+.banner a.b-btn {
+	display: inline-block;
+	margin-top: 1.1em;
+	padding: 0.7em 2.2em;
+	border-radius: 999px;
+	background: #113c75;
+	color: #fff !important;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	text-decoration: none !important;
+	border: 2px solid #fff;
+	box-shadow: 0 8px 20px rgba(10, 30, 70, 0.35);
+	transition: background 0.2s, transform 0.2s;
+}
+.banner a.b-btn:hover { background: #105697; transform: translateY(-2px); }
+
+/* Mid-size screens: a little more room for the right-hand side */
+@media (max-width: 1150px) {
+	.banner-content { width: 58%; }
+	.banner-photo {
+		-webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 18%, rgba(0,0,0,0.95) 24%, rgba(0,0,0,0.86) 30%, rgba(0,0,0,0.72) 36%, rgba(0,0,0,0.55) 42%, rgba(0,0,0,0.37) 48%, rgba(0,0,0,0.21) 53%, rgba(0,0,0,0.09) 58%, rgba(0,0,0,0) 64%);
+		mask-image: linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 18%, rgba(0,0,0,0.95) 24%, rgba(0,0,0,0.86) 30%, rgba(0,0,0,0.72) 36%, rgba(0,0,0,0.55) 42%, rgba(0,0,0,0.37) 48%, rgba(0,0,0,0.21) 53%, rgba(0,0,0,0.09) 58%, rgba(0,0,0,0) 64%);
+	}
+}
+
+
+/* Phones and small tablets: skyline across the top, fading down into the blue */
+@media (max-width: 820px) {
+	.banner {
+		display: block;
+		height: auto;
+		background: #615e8a;
+		padding-top: calc(100vw * 505 / 1312 * 0.9);
+	}
+	.banner-photo {
+		inset: 0 0 auto 0;
+		width: 100%;
+		height: calc(100vw * 505 / 1312);
+		aspect-ratio: auto;
+		background-size: 100% auto;
+		background-position: center top;
+		-webkit-mask-image: none;
+		mask-image: none;
+	}
+	.banner-fade {
+		display: block;
+		position: absolute;
+		inset: 0;
+		/* starts at the water's own colour and deepens gradually down the banner */
+		background: linear-gradient(to bottom, #615e8a 0, #615e8a calc((100vw * 505 / 1312) * 1.0), #5a5985 calc((100vw * 505 / 1312) * 1.5), #4f5080 calc((100vw * 505 / 1312) * 2.2), #44466f calc((100vw * 505 / 1312) * 3), #3c3f69 100%);
+		-webkit-mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,0) calc((100vw * 505 / 1312) * 0.6), rgba(0,0,0,0.1) calc((100vw * 505 / 1312) * 0.68), rgba(0,0,0,0.3) calc((100vw * 505 / 1312) * 0.76), rgba(0,0,0,0.55) calc((100vw * 505 / 1312) * 0.84), rgba(0,0,0,0.8) calc((100vw * 505 / 1312) * 0.92), rgba(0,0,0,1) calc((100vw * 505 / 1312) * 1.0));
+		mask-image: linear-gradient(to bottom, transparent 0, rgba(0,0,0,0) calc((100vw * 505 / 1312) * 0.6), rgba(0,0,0,0.1) calc((100vw * 505 / 1312) * 0.68), rgba(0,0,0,0.3) calc((100vw * 505 / 1312) * 0.76), rgba(0,0,0,0.55) calc((100vw * 505 / 1312) * 0.84), rgba(0,0,0,0.8) calc((100vw * 505 / 1312) * 0.92), rgba(0,0,0,1) calc((100vw * 505 / 1312) * 1.0));
+	}
+	.banner-content {
+		width: 100%;
+		flex-direction: column;
+		padding: 0 1.25em 2.25em;
+		gap: 0.5em;
+	}
+	.banner-art { width: min(55vw, 230px); }
+	.banner .b-title .b-line1 { font-size: clamp(2.5rem, 9vw, 3.8rem); }
+	.banner .b-title .b-line2 { font-size: clamp(1.3rem, 4.6vw, 2.1rem); }
+	.banner p.b-theme { font-size: clamp(0.9rem, 2.4vw, 1.1rem); }
+	.banner p.b-date { font-size: clamp(1.1rem, 3.4vw, 1.5rem); }
+	.banner-text { text-align: center; }
+	.banner p.b-theme, .banner p.b-date { text-align: center !important; }
+}
+
+/* Embedded Eventbrite registration */
+.register-embed {
+	max-width: 760px;
+	margin: 2em auto 2.5em;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+}
+.main .register-embed h3 { color: #113c75; margin-bottom: 0.6em; font-family: 'Montserrat', sans-serif; font-weight: 600; }
+.register-embed .eb-frame {
+	background: #fff;
+	border: 1px solid #d5e3ee;
+	border-radius: 10px;
+	overflow: hidden;
+	min-height: 120px;
+}
+.register-embed .eb-fallback { text-align: center !important; margin-top: 0.8em; font-size: 0.85em; color: #5b6b7f; }
+.register-embed .eb-fallback a { font-weight: 700; }
+.register-embed .eb-fallback.eb-only { font-size: 0; }
+.register-embed .eb-fallback.eb-only a {
+	display: inline-block;
+	font-size: 1rem;
+	padding: 0.75em 2.2em;
+	border-radius: 999px;
+	background: #113c75;
+	color: #fff !important;
+	text-decoration: none !important;
+	border: 0;
+}
+/* Keep the YouTube embed inside the page on phones */
+#info iframe[src*="youtube"] { max-width: 100%; height: auto; aspect-ratio: 16 / 9; }
+
+/* Photo credit (CC BY-SA): small camera icon on the photo; click to show */
+.banner-credit {
+	position: absolute;
+	left: 0.75em;
+	bottom: 0.75em;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 0.72rem;
+	line-height: 1.4;
+	color: #fff;
+}
+.banner-credit summary {
+	display: grid;
+	place-items: center;
+	width: 1.35rem;
+	height: 1.35rem;
+	border-radius: 50%;
+	background: rgba(15, 20, 50, 0.22);
+	color: rgba(255, 255, 255, 0.55);
+	font-size: 0.6rem;
+	cursor: pointer;
+	list-style: none;
+}
+.banner-credit summary::-webkit-details-marker { display: none; }
+.banner-credit summary:hover, .banner-credit[open] summary { background: rgba(15, 20, 50, 0.6); color: #fff; }
+.banner-credit > span {
+	padding: 0.35em 0.75em;
+	border-radius: 6px;
+	background: rgba(15, 20, 50, 0.7);
+	white-space: nowrap;
+}
+.banner-credit a { color: #fff !important; text-decoration: underline !important; border: 0; }
+@media (max-width: 820px) {
+	.banner-credit { left: auto; right: 0.6em; bottom: auto; top: 0.6em; flex-direction: row-reverse; }
+	.banner-credit > span { white-space: normal; max-width: calc(100vw - 4.5rem); }
+}
+
+/* Event details block (dates, cost, location) under the intro */
+.event-details { margin-top: 2.5em; }
+.event-details h3.details-title {
+	margin: 0 0 0.8em;
+	color: #113c75;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	text-align: center;
+}
