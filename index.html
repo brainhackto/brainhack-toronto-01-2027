@@ -16,18 +16,18 @@
 		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="stylesheet" href="assets/css/index.css" />
+	<link rel="stylesheet" href="assets/css/main.css?v=2027.1" />
+	<link rel="stylesheet" href="assets/css/index.css?v=2027.1" />
 
 
 	<!-- Schedule component (data: assets/data/schedule.json) -->
-	<link rel="stylesheet" href="assets/css/agenda.css" />
-	<link rel="stylesheet" href="assets/css/venn.css" />
-	<link rel="stylesheet" href="assets/css/hero.css" />
-	<link rel="stylesheet" href="assets/css/nav.css" />
-	<link rel="stylesheet" href="assets/css/footer.css" />
-	<script src="assets/js/agenda.js"></script>
-	<script src="assets/js/jquery.min.js"></script>
+	<link rel="stylesheet" href="assets/css/agenda.css?v=2027.1" />
+	<link rel="stylesheet" href="assets/css/venn.css?v=2027.1" />
+	<link rel="stylesheet" href="assets/css/hero.css?v=2027.1" />
+	<link rel="stylesheet" href="assets/css/nav.css?v=2027.1" />
+	<link rel="stylesheet" href="assets/css/footer.css?v=2027.1" />
+	<script src="assets/js/agenda.js?v=2027.1"></script>
+	<script src="assets/js/jquery.min.js?v=2027.1"></script>
 
 	<!-- Script for responsive banner -->
 	<script>
@@ -181,12 +181,16 @@
 					</table>
 				</div>
 
-				<!-- Embedded Eventbrite checkout (event 2003679385981). It needs HTTPS, so it may not
-				     appear on a local http:// preview; it works on github.io. The link below always works. -->
+				<!-- Registration (Eventbrite event 2003679385981). On the live https site the button opens
+				     Eventbrite's checkout as a pop-up over the page; elsewhere it opens the Eventbrite page. -->
 				<div id="register-section" class="register-embed">
 					<h3>Register</h3>
-					<div class="eb-frame" id="eventbrite-widget-container-2003679385981"></div>
-					<p class="eb-fallback">Form not loading? <a href="https://www.eventbrite.com/e/brainhack-global-toronto-2027-jan-20-22-tickets-2003679385981" target="_blank">Register on Eventbrite</a></p>
+					<div class="register-card">
+						<p class="rc-price">CA$30 <span>General admission</span></p>
+						<p class="rc-meta">January 20&ndash;22, 2027 &middot; SickKids, Toronto<br>Includes onsite breakfast and lunch</p>
+						<a id="eventbrite-checkout-trigger" class="rc-btn" href="https://www.eventbrite.com/e/brainhack-global-toronto-2027-jan-20-22-tickets-2003679385981" target="_blank" rel="noopener">Get tickets</a>
+						<p class="rc-note">Tickets are handled securely by Eventbrite.</p>
+					</div>
 				</div>
 
 				<div class="map-responsive">
@@ -751,30 +755,27 @@
 		</div>
 	</footer>
 
-	<!-- Eventbrite embedded checkout -->
+	<!-- Eventbrite pop-up checkout (only works on https pages; otherwise the button is a plain link) -->
 	<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
 	<script>
-		// Eventbrite refuses to load the form on non-HTTPS pages (e.g. a local preview),
-		// so there we show only the link to Eventbrite.
-		if (location.protocol !== 'https:') {
-			document.getElementById('eventbrite-widget-container-2003679385981').style.display = 'none';
-			document.querySelector('#register-section .eb-fallback').className = 'eb-fallback eb-only';
-		} else try {
+		if (location.protocol === 'https:' && window.EBWidgets) try {
+			var ebBtn = document.getElementById('eventbrite-checkout-trigger');
 			window.EBWidgets.createWidget({
 				widgetType: 'checkout',
 				eventId: '2003679385981',
-				iframeContainerId: 'eventbrite-widget-container-2003679385981',
-				iframeContainerHeight: 560
+				modal: true,
+				modalTriggerElementId: 'eventbrite-checkout-trigger'
 			});
-		} catch (e) { /* fallback link stays visible */ }
+			ebBtn.addEventListener('click', function (e) { e.preventDefault(); });
+		} catch (e) { /* button stays a normal link to Eventbrite */ }
 	</script>
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/skel.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+	<script src="assets/js/jquery.min.js?v=2027.1"></script>
+	<script src="assets/js/jquery.scrolly.min.js?v=2027.1"></script>
+	<script src="assets/js/skel.min.js?v=2027.1"></script>
+	<script src="assets/js/util.js?v=2027.1"></script>
+	<script src="assets/js/main.js?v=2027.1"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 	<!-- Script for writing into divs worklife-text -->
