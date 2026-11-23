@@ -1,0 +1,212 @@
+/* Site header: full-width bar that stays at the top while scrolling.
+   Brand on the left, links on the right; collapses to a menu button on narrow screens. */
+html { scroll-padding-top: 76px; }
+
+.site-nav {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	width: 100%;
+	background: #113c75;
+	box-shadow: 0 2px 12px rgba(10, 30, 60, 0.25);
+	font-family: 'Montserrat', sans-serif;
+}
+.site-nav .nav-inner {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5em;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 1.5em;
+	min-height: 64px;
+}
+.site-nav a { text-decoration: none !important; border: 0; }
+
+.site-nav .brand {
+	color: #fff !important;
+	font-weight: 800;
+	font-size: 1.2rem;
+	letter-spacing: 0.01em;
+	white-space: nowrap;
+}
+.site-nav .brand span { color: #5adcfa; }
+
+.site-nav .nav-links {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	gap: 0.2em;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.site-nav .nav-links a {
+	display: block;
+	padding: 0.5em 0.8em;
+	border-radius: 6px;
+	color: #dcecf7 !important;
+	font-size: 0.95rem;
+	font-weight: 600;
+	white-space: nowrap;
+	transition: background 0.2s, color 0.2s;
+}
+.site-nav .nav-links a:hover,
+.site-nav .nav-links a:focus-visible {
+	background: rgba(255, 255, 255, 0.12);
+	color: #fff !important;
+}
+.site-nav .nav-links a.nav-icon { font-size: 1.1rem; padding: 0.5em 0.55em; }
+.site-nav .nav-links a.nav-cta {
+	margin-left: 0.5em;
+	padding: 0.55em 1.3em;
+	border-radius: 999px;
+	background: #5adcfa;
+	color: #0b2a52 !important;
+	font-weight: 800;
+}
+.site-nav .nav-links a.nav-cta:hover { background: #fff; color: #113c75 !important; }
+
+.site-nav .nav-toggle {
+	display: none;
+	margin: 0;
+	padding: 0.4em 0.6em;
+	border: 1px solid rgba(255, 255, 255, 0.35);
+	border-radius: 6px;
+	background: transparent;
+	box-shadow: none;
+	color: #fff;
+	font-size: 1.3rem;
+	line-height: 1;
+	height: auto;
+	cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+	.site-nav .nav-inner { flex-wrap: wrap; padding: 0 1em; }
+	.site-nav .nav-toggle { display: block; }
+	.site-nav .nav-links {
+		display: none;
+		flex-basis: 100%;
+		flex-direction: column;
+		align-items: stretch;
+		padding: 0 0 0.8em;
+	}
+	.site-nav.open .nav-links { display: flex; }
+	.site-nav .nav-links a { padding: 0.75em 0.6em; }
+	.site-nav .nav-links a.nav-cta { margin: 0.5em 0 0; text-align: center; }
+	.site-nav .nav-icons { display: flex; gap: 0.4em; }
+}
+@media (max-width: 420px) {
+	.site-nav .brand { font-size: 1.05rem; }
+}
+.site-nav .nav-icons { display: flex; gap: 0.1em; }
+
+/* Section headings below the banner: semi-bold, same navy as the top bar */
+.main h2 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600 !important;
+	color: #113c75 !important;
+	letter-spacing: 0;
+}
+.main h2 b { font-weight: 800; }
+
+/* Quiet closing line under the institution logos */
+.main p.logo-more {
+	display: flex;
+	align-items: center;
+	gap: 1.2em;
+	max-width: 520px;
+	margin: 1.5em auto 0.5em;
+	text-align: center !important;
+	color: #5b6b7f;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 0.85rem;
+	font-weight: 600;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+}
+.main p.logo-more::before,
+.main p.logo-more::after {
+	content: "";
+	flex: 1;
+	height: 1px;
+	background: #c9d6e3;
+}
+
+/* X (formerly Twitter) logo: inline SVG, since the icon fonts here predate it */
+svg.x-logo { width: 0.9em; height: 0.9em; vertical-align: -0.1em; fill: currentColor; }
+
+/* Headings placed directly in a grid row (Schedule, Meet Our Team, ...) would otherwise
+   float left like grid cells; make them full-width and centred like the other sections. */
+.main .row > h2 { float: none; width: 100%; text-align: center !important; }
+
+/* Team grid: photo on top, details centred underneath, in an evenly spaced centred grid.
+   (The template packed side-by-side cards to the left.) */
+.main .subcomittee-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 2em 1.5em;
+	min-width: 0;
+	max-width: 1000px;
+	margin: 0 auto;
+}
+.main .subcomittee-container .flex-item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+	flex: 0 0 200px;
+	text-align: center;
+	overflow: visible;
+}
+.main .subcomittee-container .flex-item img { display: block; width: 96px; height: 96px; margin: 0 auto; }
+.main .subcomittee-container .description-text {
+	float: none;
+	align-items: center;
+	margin: 0.7em 0 0;
+	text-align: center;
+	font-size: 0.95rem;
+	line-height: 1.5;
+}
+.main .subcomittee-container .description-text > div:first-child { font-weight: 600; color: #113c75; }
+@media (max-width: 480px) {
+	.main .subcomittee-container { gap: 1.5em 0.75em; }
+	.main .subcomittee-container .flex-item { flex-basis: calc(50% - 0.4em); }
+	.main .subcomittee-container .flex-item img { width: 80px; height: 80px; }
+	.main .subcomittee-container .description-text { font-size: 0.85rem; }
+}
+
+/* Breathing room under the Schedule and Meet Our Team headings */
+.main #agenda-section > h2,
+.main #team > h2 { margin-bottom: 1.4em; }
+
+/* Team names: true semibold in the heading font (Roboto 600 isn't loaded, so it was faux-bolded) */
+.main .subcomittee-container .description-text > div:first-child { font-family: 'Montserrat', sans-serif; font-weight: 600; }
+
+/* Headings in the dark feature bands (Learn, Be Social, Get Involved, Project Ideas):
+   same font and weight as the other section headings */
+.content.dark h3 { font-family: 'Montserrat', sans-serif; font-weight: 600; letter-spacing: 0; }
+
+/* "Join the organizing team" line under the team grid */
+.main .team-join { max-width: 720px; margin: 2.5em auto 0; }
+.main .team-join p { text-indent: 0 !important; }
+
+/* Body paragraphs: justified (last line left), no indent.
+   Skips the schedule, registration, Venn caption, "and many more" line and the centred feature blurbs. */
+.main p:not(.logo-more, .eb-fallback, .agenda p, .register-embed p, .venn p, .featured p) {
+	text-align: justify !important;
+	text-indent: 0 !important;
+	hyphens: auto;
+	-webkit-hyphens: auto;
+}
+/* The "join the organizing team" line stays centred under the team grid */
+.main .team-join p { text-align: justify !important; text-align-last: center; }
+
+/* Program list beside the Venn diagram: justified like the paragraphs */
+.main #schedule ul li, .main .row ul li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+.main .row ul li + li { margin-top: 0.9em; }

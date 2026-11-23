@@ -1,0 +1,64 @@
+/* Footer / contact: plain three-column layout on navy, matching the top bar. */
+.site-footer {
+	background: #113c75;
+	color: #c9d8e8;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 0.9rem;
+	line-height: 1.7;
+	text-align: left;
+}
+.site-footer a { color: #fff !important; text-decoration: none !important; border: 0; }
+.site-footer a:hover { text-decoration: underline !important; }
+.site-footer p { margin: 0 !important; padding: 0 !important; text-align: left !important; }
+
+.site-footer .footer-inner {
+	display: grid;
+	grid-template-columns: 2fr 1.2fr 1fr;
+	gap: 2.5em;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 3.5em 1.5em 3em;
+}
+.site-footer .footer-name {
+	margin-bottom: 0.5em !important;
+	color: #fff;
+	font-size: 1.05rem;
+	font-weight: 700;
+}
+.site-footer h2.footer-label {
+	margin: 0 0 0.6em;
+	padding: 0;
+	color: #8fb0cf !important;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 0.75rem !important;
+	font-weight: 600 !important;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	text-align: left !important;
+}
+.site-footer .footer-links { margin: 0; padding: 0; list-style: none; }
+.site-footer .footer-links li { margin: 0; padding: 0; }
+
+.site-footer .footer-bottom {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 0.4em 1.5em;
+	max-width: 1100px;
+	margin: 0 auto;
+	padding: 1.2em 1.5em 1.5em;
+	border-top: 1px solid rgba(255, 255, 255, 0.15);
+	color: #8fb0cf;
+	font-size: 0.78rem;
+}
+.site-footer .footer-bottom a { color: #c9d8e8 !important; }
+
+@media (max-width: 760px) {
+	.site-footer .footer-inner { grid-template-columns: 1fr; gap: 1.8em; padding-top: 2.5em; }
+}
+.site-footer .footer-links li + li { margin-top: 0.2em; }
+.site-footer .footer-links a { display: inline-flex; align-items: center; gap: 0.6em; }
+.site-footer .footer-links i, .site-footer .footer-links svg { width: 1.1em; text-align: center; font-size: 1.05em; color: #c9d8e8; }
+.site-footer .footer-links a:hover i, .site-footer .footer-links a:hover svg { color: #fff; }
+.site-footer .footer-links svg.x-logo { height: 0.95em; fill: #c9d8e8; }
+.site-footer .footer-links a:hover svg.x-logo { fill: #fff; }
